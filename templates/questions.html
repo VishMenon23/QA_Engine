@@ -1,0 +1,15 @@
+<!-- questions.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Question/Answer Engine</title>
+</head>
+<body>
+	<h1>Generated Questions</h1>
+	<ul>
+	{% for question in questions %}
+		<li>{{ question }}</li>
+	{% endfor %}
+	</ul>
+</body>
+</html>
