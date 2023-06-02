@@ -7,10 +7,6 @@ boto3
 bottleneck
 brotlipy
 colorama
-conda-package-handling
-conda-repo-cli
-conda-token
-conda-verify
 cython
 cytoolz
 datashader
