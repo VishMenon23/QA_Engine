@@ -1,5 +1,5 @@
-from flask import Blueprint,render_template,request,redirect,url_for,Response
-import requests, zipfile, io
+from flask import Blueprint,render_template,request,Response
+import io
 import pandas as pd
 import random
 import csv
