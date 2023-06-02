@@ -1,4 +1,3 @@
--m pip install --upgrade pip
 astropy
 autopep8
 bcrypt
@@ -8,7 +7,6 @@ boto3
 bottleneck
 brotlipy
 colorama
-conda-build
 conda-package-handling
 conda-repo-cli
 conda-token
