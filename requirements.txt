@@ -1,5 +1,3 @@
-anaconda-navigator
-anaconda-project
 astropy
 autopep8
 bcrypt
