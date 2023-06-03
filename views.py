@@ -7,7 +7,7 @@ import openai
 #http://vish23.pythonanywhere.com/
 views = Blueprint(__name__,"views")
 
-openai.api_key = "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"
+openai.api_key = Api_Key
 
 def Generate_Questions(num_questions):
     airbnb = pd.read_csv("https://raw.githubusercontent.com/dev7796/data101_tutorial/main/files/dataset/airbnb.csv")
