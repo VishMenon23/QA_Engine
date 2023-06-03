@@ -10,6 +10,49 @@
 		<label for="num_questions">Enter the number of Questions you want to generate :</label>
 		<input type="number" id="num_questions" name="num_questions" min="1" max="1000" required>
 		<button type="submit">Generate</button>
+		<br><br>
 	</form>
+	<!-- <form>
+        <label for="question-type">Select question type:</label>
+        <select id="question-type">
+            <option value="1">Coding Question</option>
+            <option value="2">Text Question</option>
+        </select>
+        <br><br>
+
+        <label for="question-input">Enter your question:</label>
+        <input type="text" id="question-input">
+        <br><br>
+
+        <label for="answer-output">Answer:</label>
+        <textarea id="answer-output" rows="4" cols="50" readonly></textarea>
+        <br><br>
+
+        <button type="button" onclick="getAnswer()">Get Answer</button>
+    </form> -->
+	<form method="POST" action="/gpt">
+		<label for="dataset-link">Please insert the link to the dataset :</label>
+		<input type="text" id="link_ds" name="link_ds" required>
+		<button type="submit">Submit</button>
+		<br><br>
+		
+        <label for="question-type">Select question type:</label>
+        <select id="question-type" name="question_type">
+            <option value="1">Coding Question</option>
+            <option value="2">Text Question</option>
+        </select>
+        <br><br>
+
+        <label for="question-input">Enter your question:</label>
+        <input type="text" id="question-input" name="question">
+		<button type="submit">Get Answer</button>
+		<br><br>
+
+        <label for="answer-output">Answer:</label>
+        <textarea id="answer-output" rows="4" cols="50" readonly>{{ answer }}</textarea>
+        <br><br>
+
+    </form>
+
 </body>
 </html>

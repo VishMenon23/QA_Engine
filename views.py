@@ -3,8 +3,11 @@ import io
 import pandas as pd
 import random
 import csv
+import openai
 #http://vish23.pythonanywhere.com/
 views = Blueprint(__name__,"views")
+
+openai.api_key = "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"
 
 def Generate_Questions(num_questions):
     airbnb = pd.read_csv("https://raw.githubusercontent.com/dev7796/data101_tutorial/main/files/dataset/airbnb.csv")
@@ -78,6 +81,44 @@ def Generate_Questions(num_questions):
 def home():
     return render_template('home.html')
 
+#NEW
+@views.route('/gpt', methods=['GET', 'POST'])
+def question_page():
+    if request.method == 'POST':
+        question_type = int(request.form['question_type'])
+        question = request.form['question']
+        link = request.form['link_ds']
+        answer = get_answer(question_type, question, link)
+        return render_template('home.html', answer=answer)
+
+    return render_template('home.html')
+
+def get_answer(question_type, question, link):
+    answer = ""
+
+    # Perform any necessary processing based on question type and input
+    # and set the answer value
+
+    # Example: If question type is 1 (coding question), answer is hardcoded
+    if question_type == 1:
+        answer = "The answer to the coding question is 42."
+
+    # Example: If question type is 2 (text question), answer is echoed from the input
+    if question_type == 2:
+        question+=" Make sure the answer is less than 200 words."
+        #answer = f"Your question was: {question}"
+        messages = [{"role": "system", "content": "You are a data scientist"}]
+        messages.append({"role": "user", "content": question})
+        response = openai.ChatCompletion.create(
+            model = "gpt-3.5-turbo",
+            messages = messages
+        )
+        ChatGPT_reply = response["choices"][0]["message"]["content"]
+        messages.append({"role": "assistant", "content": ChatGPT_reply})
+        answer = ChatGPT_reply
+
+    return answer
+#NEW
 # Question Generation Root
 @views.route('/generate', methods=['POST'])
 def generate():
