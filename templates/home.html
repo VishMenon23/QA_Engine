@@ -12,30 +12,13 @@
 		<button type="submit">Generate</button>
 		<br><br>
 	</form>
-	<!-- <form>
-        <label for="question-type">Select question type:</label>
-        <select id="question-type">
-            <option value="1">Coding Question</option>
-            <option value="2">Text Question</option>
-        </select>
-        <br><br>
 
-        <label for="question-input">Enter your question:</label>
-        <input type="text" id="question-input">
-        <br><br>
-
-        <label for="answer-output">Answer:</label>
-        <textarea id="answer-output" rows="4" cols="50" readonly></textarea>
-        <br><br>
-
-        <button type="button" onclick="getAnswer()">Get Answer</button>
-    </form> -->
 	<form method="POST" action="/gpt">
 		<label for="dataset-link">Please insert the link to the dataset :</label>
 		<input type="text" id="link_ds" name="link_ds" required>
-		<button type="submit">Submit</button>
+		<!--<button type="submit">Submit</button>-->
 		<br><br>
-		
+
         <label for="question-type">Select question type:</label>
         <select id="question-type" name="question_type">
             <option value="1">Coding Question</option>
@@ -45,7 +28,7 @@
 
         <label for="question-input">Enter your question:</label>
         <input type="text" id="question-input" name="question">
-		<button type="submit">Get Answer</button>
+		<button onclick="hideContent()"  type="submit">Get Answer</button>
 		<br><br>
 
         <label for="answer-output">Answer:</label>
@@ -53,6 +36,35 @@
         <br><br>
 
     </form>
+	<script>
+		function hideContent() {
+		  var hiddenContent = document.getElementById("sample-code");
+		  hiddenContent.style.display = "none";
+		}
+	  </script>
+	<script type="text/javascript" src="//cdn.datacamp.com/dcl-react.js.gz"></script>
+	<div data-datacamp-exercise data-lang="r">
+		<code data-type="pre-exercise-code">
+			# This will get executed each time the exercise gets initialized
+			b = 6
+		</code>
+		<code id="sample-code" data-type="sample-code">
+			{{ answer }}
+		</code>
+		<!-- <code data-type="solution">
+			# Create a variable a, equal to 5
+			a <- 5
+	
+			# Print out a
+			print(a)
+		</code> -->
+		<!-- <code data-type="sct">
+			test_object("a")
+			test_function("print")
+			success_msg("Great job!")
+		</code> -->
+		<!-- <div data-type="hint">Use the assignment operator (<code><-</code>) to create the variable <code>a</code>.</div> -->
+	</div>
 
 </body>
 </html>

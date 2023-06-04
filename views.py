@@ -5,7 +5,7 @@ import random
 import csv
 import openai
 import os
-#http://vish23.pythonanywhere.com/
+
 views = Blueprint(__name__,"views")
 
 openai.api_key = os.environ.get('Api_Key')
@@ -82,7 +82,7 @@ def Generate_Questions(num_questions):
 def home():
     return render_template('home.html')
 
-#NEW
+
 @views.route('/gpt', methods=['GET', 'POST'])
 def question_page():
     if request.method == 'POST':
@@ -96,18 +96,33 @@ def question_page():
 
 def get_answer(question_type, question, link):
     answer = ""
-
-    # Perform any necessary processing based on question type and input
-    # and set the answer value
-
-    # Example: If question type is 1 (coding question), answer is hardcoded
+    # Coding Question
     if question_type == 1:
-        answer = "The answer to the coding question is 42."
+        ds_link = pd.read_csv(link)
+        column_names = ds_link.columns
+        str_col=""
+        len=column_names.size
+        for i in range(len):
+            if(i==len-2):
+                str_col+=column_names[i]+" and "
+            elif(i==len-1):
+                str_col+=column_names[i]    
+            else:
+                str_col+=column_names[i]+","
+        question = "Write code in R to find the " + question +" in the dataset "+link+" with columns " + str_col + ". Return only the R code"
+        messages = [{"role": "system", "content": "You are a data scientist who knows the programming language R"}]
+        messages.append({"role": "user", "content": question})
+        response = openai.ChatCompletion.create(
+            model = "gpt-3.5-turbo",
+            messages = messages
+        )
+        ChatGPT_reply = response["choices"][0]["message"]["content"]
+        messages.append({"role": "assistant", "content": ChatGPT_reply})
+        answer = ChatGPT_reply
 
-    # Example: If question type is 2 (text question), answer is echoed from the input
+    # Text Question 
     if question_type == 2:
         question+=" Make sure the answer is less than 200 words."
-        #answer = f"Your question was: {question}"
         messages = [{"role": "system", "content": "You are a data scientist"}]
         messages.append({"role": "user", "content": question})
         response = openai.ChatCompletion.create(
@@ -119,7 +134,7 @@ def get_answer(question_type, question, link):
         answer = ChatGPT_reply
 
     return answer
-#NEW
+
 # Question Generation Root
 @views.route('/generate', methods=['POST'])
 def generate():
