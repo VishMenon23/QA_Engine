@@ -72,7 +72,6 @@ def Generate_Questions(num_questions):
             c_1=c_1+1
         elif(num_of_subset_conditions==2):
             c_2=c_2+1
-        #print(c_1,c_2)
         i=i+1
 
     return questions
@@ -89,38 +88,19 @@ def question_page():
         question_type = int(request.form['question_type'])
         question = request.form['question']
         link = request.form['link_ds']
-        answer = get_answer(question_type, question, link)
-        return render_template('home.html', answer=answer)
+        answer=""
+        answer_text=""
+        if(question_type==1):
+            answer = get_answer(question_type, question, link)
+        elif(question_type==2):
+            answer_text=get_text_answer(question_type, question, link)    
+        return render_template('home.html', answer=answer, answer_text=answer_text)
 
     return render_template('home.html')
 
-def get_answer(question_type, question, link):
+def get_text_answer(question_type, question, link):
     answer = ""
-    # Coding Question
-    if question_type == 1:
-        ds_link = pd.read_csv(link)
-        column_names = ds_link.columns
-        str_col=""
-        len=column_names.size
-        for i in range(len):
-            if(i==len-2):
-                str_col+=column_names[i]+" and "
-            elif(i==len-1):
-                str_col+=column_names[i]    
-            else:
-                str_col+=column_names[i]+","
-        question = "Write code in R to find the " + question +" in the dataset "+link+" with columns " + str_col + ". Return only the R code"
-        messages = [{"role": "system", "content": "You are a data scientist who knows the programming language R"}]
-        messages.append({"role": "user", "content": question})
-        response = openai.ChatCompletion.create(
-            model = "gpt-3.5-turbo",
-            messages = messages
-        )
-        ChatGPT_reply = response["choices"][0]["message"]["content"]
-        messages.append({"role": "assistant", "content": ChatGPT_reply})
-        answer = ChatGPT_reply
-
-    # Text Question 
+    # Text Question
     if question_type == 2:
         question+=" Make sure the answer is less than 200 words."
         messages = [{"role": "system", "content": "You are a data scientist"}]
@@ -132,6 +112,37 @@ def get_answer(question_type, question, link):
         ChatGPT_reply = response["choices"][0]["message"]["content"]
         messages.append({"role": "assistant", "content": ChatGPT_reply})
         answer = ChatGPT_reply
+
+    return answer
+
+def get_answer(question_type, question, link):
+    answer = ""
+    # Coding Question
+    if question_type == 1:
+        if(link==""):
+            answer="Please insert a link to access the dataset"
+        else:    
+            ds_link = pd.read_csv(link)
+            column_names = ds_link.columns
+            str_col=""
+            len=column_names.size
+            for i in range(len):
+                if(i==len-2):
+                    str_col+=column_names[i] + " and "
+                elif(i==len-1):
+                    str_col+=column_names[i]    
+                else:
+                    str_col+=column_names[i] + ","
+            question = "Write code in R to find the " + question +" in the dataset "+link+" with columns " + str_col + ". Return only the R code"
+            messages = [{"role": "system", "content": "You are a data scientist who knows the programming language R"}]
+            messages.append({"role": "user", "content": question})
+            response = openai.ChatCompletion.create(
+                model = "gpt-3.5-turbo",
+                messages = messages
+            )
+            ChatGPT_reply = response["choices"][0]["message"]["content"]
+            messages.append({"role": "assistant", "content": ChatGPT_reply})
+            answer = ChatGPT_reply
 
     return answer
 

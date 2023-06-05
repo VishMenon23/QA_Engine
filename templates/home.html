@@ -15,33 +15,30 @@
 
 	<form method="POST" action="/gpt">
 		<label for="dataset-link">Please insert the link to the dataset :</label>
-		<input type="text" id="link_ds" name="link_ds" required>
+		<input type="text" id="link_ds" name="link_ds">
 		<!--<button type="submit">Submit</button>-->
 		<br><br>
 
         <label for="question-type">Select question type:</label>
         <select id="question-type" name="question_type">
             <option value="1">Coding Question</option>
-            <option value="2">Text Question</option>
+            <option value="2">Concept question</option>
         </select>
         <br><br>
 
         <label for="question-input">Enter your question:</label>
         <input type="text" id="question-input" name="question">
-		<button onclick="hideContent()"  type="submit">Get Answer</button>
+		<button type="submit">Get Answer</button>
 		<br><br>
 
-        <label for="answer-output">Answer:</label>
+		<label for="answer-output-text">Text Answer:</label>
+        <textarea id="answer-output-text" rows="4" cols="50" readonly>{{ answer_text }}</textarea>
+        <br><br>
+        <label for="answer-output">Coding Answer:</label>
         <textarea id="answer-output" rows="4" cols="50" readonly>{{ answer }}</textarea>
         <br><br>
 
     </form>
-	<script>
-		function hideContent() {
-		  var hiddenContent = document.getElementById("sample-code");
-		  hiddenContent.style.display = "none";
-		}
-	  </script>
 	<script type="text/javascript" src="//cdn.datacamp.com/dcl-react.js.gz"></script>
 	<div data-datacamp-exercise data-lang="r">
 		<code data-type="pre-exercise-code">
