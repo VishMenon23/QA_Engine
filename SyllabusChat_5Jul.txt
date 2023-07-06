@@ -1,0 +1,169 @@
+Class is in PERSON ONLY (LSH Auditorium)
+
+CLASS TIMINGS - 
+1. Monday 12:10PM-1:30PM
+2. Thursday   12:10PM-1:30PM
+
+ACTIVE TEXTBOOK: tinyurl.com/RData101
+
+We will be using this web application for live coding in class,  as well as reference textbook. It has plenty of examples of active code, which you can modify and run right there without any software installed on your machine. You will need R studio to do your homework, but textbook would allow you to follow my "live coding"  in class:
+
+All information we need is there. No need for power point slides (most of the time) and no need for any other book - unless I provide with specific references.
+
+Also use the Practice Problem Set for R coding - remember you can modify the code,  so it is an active problem set, just like textbook is active.  It is right link on the same URL as active textbook (left link)
+
+tinyurl.com/RData101 or http://sqltutorialbook.eba-raptuqwn.us-east-1.elasticbeanstalk.com/R
+
+PROFESSOR DETAILS  - 
+1. Name - Dr. Tomasz Imielinski 
+2. Contact Information:  timielinski@gmail.com, data101@googlegroups.com (as help line)
+3. Office hours: Wed - 10am-11am
+4. Office Hours link: zoom: https://rutgers.zoom.us/j/2793647945?pwd=ajQxSVM5bm02K0pjb3dBUmJ3dUxvdz09
+
+TAs Online Office hours:
+Office Hours Schedule.xlsx Download Office Hours Schedule.xlsx 
+
+TAs Section Details and Contact Information:
+TA_section_details_and_contact_info.xlsx Download TA_section_details_and_contact_info.xlsx 
+
+You're advised to download the files to view them properly.
+
+SYLLABUS FOR DATA101 - 
+Concepts:
+Data Exploration, Data Visualization, Hypothesis testing, Difference of means, Null and Alternative Hypothesis, Permutation test, z-test, z-value, critical value, significance level, p-value, Bonferroni correction, Chi square test, Independence (if time allows), Bayesian Reasoning, Prior odds, Posterior odds, Likelihood ratio, False positive, True positive, Prediction, Cross validation, Decision trees, Linear regression, Recursive partitioning (rpart), linear regression MSE, Prediction accuracy, Training, Testing, Aggregate Data Paradoxes (Simpson, Ecological fallacy, Prosecutorial fallacy), Normal distribution. Central Limit Theorem. Power law distribution.
+
+R FUNCTIONS USED IN THIS CLASS - 
+nrow(), rep(), sd () 3.4.5, cut(), Plots: plot(), barplot(), boxplot(), mosaicplot(), subset(), tapply()and  aggregate()
+
+LIBRARY FUNCTIONS - 
+chisq.test(), pnorm(), Permutation(). rpart(), predict(). lm() , crossvalidation(), Parameters of rpart, minsplit and minbucket
+
+APPROXIMATE SYLLABUS AND WEEKLY PLAN - 
+Week 1 (January 16th): Intro to Data Science, Setting Up R
+Week 2 (January 23rd) Basic R Instructions: working with data in R. Simple queries in R.
+Week 3: Data Visualization and Data Transformation – Exploration with Derived Attributes,
+Week 4: Data science vs Databases, Fooled by Randomness (law of small numbers).
+Week 5: Normal Distribution, Central Limit Theorem
+Week 6: Hypothesis Testing: Permutation test, z-test
+Week 7: Multiple Hypothesis Testing,
+Week 8: Bayesian Reasoning, Common Sense Judgement and Probability (Kahneman – availability, conjunctive fallacy etc, ): Court of Data (student presentations on social issues such as Gun Control using data as argument).
+Week 9: Common Sense Judgement and Probability (Kahneman – availability, conjunctive fallacy etc), Prediction: Free style (coding simple prediction models); 
+EXAM 1
+Week 10: Prediction, rpart (recursive partitioning
+Week 11 Linear Regression, other prediction models from R- library
+Week 12: How can data fool us – paradoxes – Simpson paradox, Ecological fallacy, Prosecutorial Fallacy
+Week 13: Power Law distribution.
+Week 14: Review
+
+STUDENTS WORK - 
+1. Quizzes at least once a week (almost every class in fact).
+2. Nine Assignments -
+	1. Simple data queries (Airbnb data set)
+	2. Data visualization with prior data transformation – finding hidden data pattern.
+	3. Data driven blog
+	4. Court of data presentation (pro or con for important social issue)
+	5. Hypothesis testing (permutation test and z-test)
+	6. Multiple Hypothesis testing (Supermarket data).
+	7-9: Prediction challenges.
+3. Midterm, Final Exam.
+Important milestones: Data driven blog (like https://data101.cs.rutgers.edu/?q=blog) Court of Data and Prediction Challenges. Solving a data puzzle (data with pre-generated pattern, finding this pattern or similar patterns, like in Professor Moody’s puzzle).
+
+GRADING:
+Grade weightage - Quizzes 25%, assignments 40%, Midterm 15%, Final 20%.
+Grading Scale: The final course grade is determined using the following scale:
+A - 90-100% 
+B+ - 85-89.99% 
+B - 80-84.99% 
+C+ - 75- 79.99%
+C - 60-74.99
+D - 50-50.99
+F - <50 
+
+Quizzes: We will drop the weakest 20% of quizzes (so if there is 15 quizzes we will drop weakest 3) but we will NOT drop any HWs.
+No extra credit is provided and no makeups (unless note from dean of Students due to documented emergencies)
+LATE SUBMISSION POLICY: 25% late penalty per day.
+What if I had to skip a class?
+There is no quiz makeups, but 20% will be ignored, so just do not skip too many classes. How do you know what was covered? It is simple, since we cover active textbook section by section. After each week I will publish where we are (which section, which snippet). There is no lecture recordings unfortunately. Make effort to be in class – but all material covered is in active textbook.
+
+ABOUT REGRADING – 
+There will be a week after you get your grade to request for a regrade. We only guarantee regrade by end of the semester (but most of the time it will be much earlier), since we are understaffed to do both grading and regrading in the same time. 
+Regrading is FINAL. There is no regrade on regrade. And you cannot ask for regrade later than a week after you received the grade for specific HW/Exam/Quiz.
+
+You can use GPT for this class.
+
+TA RECITATION - 
+1. Utsav  - 
+    1. Location - TIL 207
+        1. Time - 12:25 PM - 1:20 PM
+        2. Day - Tuesday
+    2. Email - upp10@scarletmail.rutgers.edu
+
+2. Rishikesh - 
+    1. Location - TIL 207
+        1. Time - 10:35 AM - 11.30 AM
+        2. Day - Wednesday
+    2. Location - BE 101
+        1. Time - 12:25 PM - 1:20 PM
+        2. Day - Wednesday
+    3. Email ID - rkg63@scarletmail.rutgers.edu
+
+3. Ekta - 
+    1. Location - TIL 252
+        1. Time - 5:55 PM - 6:50 PM
+        2. Day - Tuesday
+    2. Location - TIL 230
+        1. Time - 10:35 AM - 11:30 AM
+        2. Day - Tuesday
+    3. Email ID - ed560@scarletmail.rutgers.edu
+
+4. Neel - 
+    1. Location - BE 101
+        1. Time - 7:45 AM - 8:40 AM
+        2. Day - Tuesday
+    2. Email ID - nsd77@scarletmail.rutgers.edu
+
+5. Kunj - 
+    1. Location - BE 111
+        1. Time - 2:15 PM - 3:10 PM
+        2. Day - Tuesday
+    2. Email ID - kcm161@scarletmail.rutgers.edu
+    
+6. Janish - 
+    1. Location - LSH-B110
+        1. Time - 7.45 PM - 8.40 PM on Wednesday
+        2. Day - Wednesday
+    2. Email ID - jrp328@scarletmail.rutgers.edu
+
+
+TA OFFICE HOURS - 
+1. Janish - 
+    1. Day - Thursday
+    2. Time - 09 AM -10 AM
+    3. Zoom Link - https://rutgers.zoom.us/j/97431409275?pwd=YUh1UzlIR3Zaai8yM2lkbThDNmltUT09
+
+2. Kunj - 
+    1. Day - Thursday
+    2. Time - 10 AM -11 AM
+    3. Zoom Link - https://us05web.zoom.us/j/8333728407?pwd=cjN0Q0lTcDZ3eGVHMG9vazdLMlBNZz09
+
+3. Rishikesh - 
+    1. Day - Thursday and Friday
+    2. Time - 03 PM-04 PM on Thursday and 01 PM - 02 PM on Friday
+    3. Zoom Link - https://www.google.com/url?q=https://us05web.zoom.us/j/5146739544pwd%3DRDhvMERQUm1Fa2NGc3dzWWZFc0pHdz09&sa=D&source=calendar&ust=1674928205719773&usg=AOvVaw0p5Xlvr-4s1afrArpO5ekP
+
+4. Ekta - 
+    1. Day - Thursday and Friday
+    2. Time - 4:30 PM - 5:30 PM on Thursday and 10 AM - 11 AM on Friday
+    3. Zoom Link - https://rutgers.zoom.us/my/ed560?pwd=TGNIZkVUSEJLLzZoTmFwakNpZUowQT09
+
+5. Neel - 
+    1. Day - Friday
+    2. Time - 09 AM -10 AM
+    3. Zoom Link - https://rutgers.zoom.us/my/nsd77?pwd=ZlkxaXl6VmZEOXZVU1pJZDVTSmo0Zz09
+
+6. Utsav - 
+    1. Day - Friday 
+    2. Time - 02 PM - 03 PM
+    3. Zoom Link - https://us04web.zoom.us/j/5168066069?pwd=N1UrK3JXM2piSVhIRDV2dVp6N1ZtZz0
+
+
