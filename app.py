@@ -34,6 +34,7 @@ def submit():
         'text': input_text,
         'sentTime': current_time
     }
+    conversation.clear()
     conversation.append(user_message)
     #form_data['input-field'] = ''
     response = chatbot_response(input_text)
